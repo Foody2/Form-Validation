@@ -193,7 +193,7 @@ input:focus {
   }
 
   .hero {
-    background-image: url(/images/hero-desktop.jpg);
+    background-image: url(images/hero-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
