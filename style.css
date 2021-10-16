@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+  /*Primary*/
+
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+
+  /* Neutral */
+
+  --dark-grayish-red: hsl(0, 6%, 24%);
+
+  /* Gradients */
+
+  --primary: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+  --secondary: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 1.1rem;
+  color: var(--dark-grayish-red);
+}
+
+p {
+  color: var(--desaturated-red);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.logo {
+  margin: 1rem 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  background: var(--primary);
+}
+
+.hero {
+  background-image: url(images/hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 30vh;
+}
+
+.left-text {
+  display: flex;
+  height: 50vh;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 4em 3em;
+  text-align: center;
+}
+
+.left-text p {
+  text-align: center;
+  padding-top: 1.5em;
+  padding-bottom: 2em;
+  line-height: 1.4rem;
+}
+
+.diff-font {
+  color: var(--desaturated-red);
+  font-weight: 300;
+  letter-spacing: 1.1rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+input {
+  border-radius: 50px;
+  padding: 15px 25px;
+  width: 100%;
+  border: 1px solid var(--desaturated-red);
+  background-color: transparent;
+  position: relative;
+  z-index: 0;
+}
+
+.submit {
+  content: url(images/icon-arrow.svg);
+}
+
+.btn {
+  background: var(--secondary);
+  border: none;
+  border-radius: 50px;
+  padding: 15px 30px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-left: -60px;
+  z-index: 1;
+}
+
+.btn:hover {
+  background: hsl(0, 80%, 86%);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+input[type="email"] {
+  font-size: 1rem;
+  color: var(--desaturated-red);
+}
+
+input:focus {
+  outline: 0;
+}
+
+.error-icon {
+  position: absolute;
+  top: 15px;
+  right: 80px;
+  display: none;
+}
+
+#error {
+  color: var(--soft-red);
+  font-size: 0.9rem;
+  padding-left: 1.5em;
+  padding-top: 0.8em;
+  display: none;
+  text-align: left;
+}
+
+@media screen and (min-width: 70em) {
+  h1 {
+    font-size: 3.5rem;
+    letter-spacing: 1.2rem;
+  }
+  h1::before {
+    content: url(images/logo.svg);
+    display: block;
+    position: absolute;
+    top: 12%;
+  }
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    background: url(images/bg-pattern-desktop.svg);
+    background-color: hsl(0, 36%, 98%);
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    max-width: 85%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .left-text {
+    text-align: left;
+    padding-left: 5em;
+    display: flex;
+    order: 1;
+  }
+
+  .left-text p {
+    text-align: left;
+    width: 60%;
+    line-height: 1.5rem;
+  }
+
+  .hero {
+    background-image: url(/images/hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 80vh;
+    order: 2;
+  }
+
+  form {
+    padding-top: 3em;
+    justify-content: flex-start;
+  }
+
+  input {
+    max-width: 65%;
+  }
+
+  .btn {
+    padding: 15px 50px;
+  }
+  .error-icon {
+    position: absolute;
+    top: 62px;
+    right: 50%;
+    display: none;
+  }
+  #error {
+    padding-left: 2em;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .left-text {
+    padding-left: 10em;
+  }
+
+  .left-text p {
+    width: 72%;
+  }
+
+  .error-icon {
+    right: 50%;
+  }
+}
